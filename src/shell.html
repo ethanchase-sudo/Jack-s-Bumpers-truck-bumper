@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jack's Bumpers — Build Your Bumper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+
+<!-- ================= SCREEN 1 ================= -->
+<div class="screen" id="s1" data-screen-label="01 Select Your Truck">
+  <header class="hdr">
+    <a class="logo" data-act="home" href="#">
+      <div class="logo-mark"><i></i></div>
+      <div><div class="logo-t">Jack's Bumpers</div><div class="logo-s">Craig, Colorado · Since the mid-90s</div></div>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="cur" data-act="home">Home</a>
+      <a data-act="explore">Explore Bumpers</a>
+      <a data-act="how">How It Works</a>
+      <a data-act="contact">Contact</a>
+    </nav>
+    <button class="btn btn-or btn-sm" data-act="start">Start Customizing</button>
+    <button class="menu-btn" data-act="menu" aria-label="Menu"><span></span></button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-img" style="background-image:url(img/hero_c.jpg)"></div>
+    <div class="hero-in">
+      <span class="step-n">BUMPER CONFIGURATOR</span>
+      <h1 class="disp">Your Truck. Your Style. <em>Your Custom Bumper.</em></h1>
+      <p>Choose your vehicle and discover the bumper design that fits your needs.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-or" data-act="start">Build Your Bumper <span class="arr">→</span></button>
+        <button class="btn btn-ghost" data-act="how">How It Works</button>
+      </div>
+      <div class="hero-meta">
+        <div><span class="mono">Built in</span><b>Craig, CO</b></div>
+        <div><span class="mono">Family-owned</span><b>Three generations</b></div>
+        <div><span class="mono">Fabrication</span><b>Steel, made to order</b></div>
+      </div>
+    </div>
+    <span class="mono hero-cap">Representative photo</span>
+  </section>
+
+  <section class="sec" id="select">
+    <div class="wrap">
+      <div class="sec-h">
+        <div><span class="step-n">STEP 01 / 02</span><h2 class="disp">Select your truck</h2></div>
+        <p style="color:var(--tx2);max-width:42ch">Pick your manufacturer, then tell us the model, year and body style.</p>
+      </div>
+      <div class="makes" id="makes"></div>
+
+      <div class="details" id="details">
+        <div class="dpanel">
+          <div class="field">
+            <div class="flabel"><span class="mono">Model</span></div>
+            <div class="chips" id="modelChips"></div>
+          </div>
+          <div class="field">
+            <div class="flabel"><span class="mono">Year</span></div>
+            <div class="sel-wrap"><select id="yearSel" aria-label="Year"></select></div>
+          </div>
+          <div class="field" style="margin-bottom:0">
+            <div class="flabel"><span class="mono">Configuration / body style</span></div>
+            <div class="chips" id="confChips"></div>
+          </div>
+        </div>
+        <div class="vprev">
+          <div class="ph" id="vpImg"></div>
+          <span class="mono cap" id="vpCap"></span>
+          <div class="ov">
+            <div><span class="mono" id="vpState"></span><h3 class="disp" id="vpName" style="margin-top:6px"></h3><div style="color:var(--tx2);font-size:14px;margin-top:4px" id="vpSub"></div></div>
+            <button class="btn btn-or go2" data-act="go2" disabled>Continue to Bumper Selection <span class="arr">→</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div><span class="mono">01</span><h4>Select your truck</h4><p>Make, model, year and cab — so the preview matches what's in your driveway.</p></div>
+    <div><span class="mono">02</span><h4>Design your bumper</h4><p>Try styles, finishes, lighting, winch and guard options in a live preview.</p></div>
+    <div><span class="mono">03</span><h4>Request a quote</h4><p>Send your build to the shop. We'll follow up to confirm fitment and details.</p></div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="access">
+        <div class="qr" id="qr" aria-label="QR code placeholder"></div>
+        <div>
+          <span class="step-n">IN THE SHOP OR ON THE ROAD</span>
+          <h3 class="disp">Scan to build on your phone</h3>
+          <p>The same configurator opens from jacksbumpers.com, a desktop browser, or a QR code on the shop counter and trade-show banners.</p>
+          <div class="devices" style="margin-top:14px"><span class="mono">Phone</span><span class="mono">Tablet</span><span class="mono">Desktop</span></div>
+        </div>
+        <button class="btn btn-ghost" data-act="copy">Copy Link</button>
+      </div>
+      <div class="foot">
+        <span>© Jack's Bumpers · Craig, Colorado</span>
+        <span>Prototype — vehicle images are representative stock photos; bumper renders are illustrative.</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="cbar" id="cbar">
+    <div class="wrap">
+      <div><span class="mono" id="cbarHint"></span><br><b id="cbarTxt"></b></div>
+      <button class="btn btn-or go2" data-act="go2" disabled>Continue to Bumper Selection <span class="arr">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SCREEN 2 ================= -->
+<div class="screen" id="s2" data-screen-label="02 Bumper Visualizer">
+  <header class="s2hdr">
+    <button class="ico-btn" data-act="go1" aria-label="Back">← <span class="lbl">Back</span></button>
+    <a class="logo" data-act="home" href="#"><div class="logo-mark"><i></i></div><div class="logo-txt"><div class="logo-t">Jack's Bumpers</div></div></a>
+    <div class="vsum">
+      <div class="th" id="vsTh"></div>
+      <div style="min-width:0"><b id="vsName"></b><span class="mono" id="vsConf" style="margin-right:8px"></span><a data-act="go1">Change</a></div>
+    </div>
+    <div class="steps">
+      <span class="done"><i>✓</i>Truck</span><em></em>
+      <span class="cur"><i>2</i>Bumper</span><em></em>
+      <span><i>3</i>Quote</span>
+    </div>
+    <button class="btn btn-or btn-sm qbtn" data-act="quote">Request a Custom Quote</button>
+  </header>
+
+  <div class="cfg">
+    <div class="main">
+      <div class="stage">
+        <div class="grid-bg"></div>
+        <div class="st-top">
+          <div class="seg" id="viewSeg">
+            <button data-view="truck">¾ On Truck</button>
+            <button data-view="front">Front</button>
+            <button data-view="side">Side</button>
+          </div>
+          <div class="st-tools">
+            <button class="ico-btn" id="lightBtn" data-act="lights">◐ <span class="lbl">Lights</span></button>
+            <button class="ico-btn" data-act="compare">⇆ <span class="lbl">Compare</span></button>
+            <button class="ico-btn" data-act="reset">↺ <span class="lbl">Reset</span></button>
+          </div>
+        </div>
+
+        <div class="view" id="v-truck">
+          <div class="photo">
+            <img id="stPhoto" alt="Selected truck">
+            <div class="bmp" id="stBmp" style="position:absolute;inset:0"></div>
+          </div>
+        </div>
+        <div class="view" id="v-front"><div class="studio" id="stFront"></div></div>
+        <div class="view" id="v-side"><div class="studio" id="stSide"></div></div>
+
+        <div class="st-bot">
+          <div class="st-title"><span class="mono">Selected design</span><b id="stName"></b></div>
+          <div class="disc" id="stCap"></div>
+        </div>
+      </div>
+
+      <div class="designs">
+        <div class="designs-h"><span class="mono">Bumper designs · 5 styles</span><span class="mono" style="color:var(--tx3)">Tap to preview</span></div>
+        <div class="drow" id="drow"></div>
+      </div>
+    </div>
+
+    <aside class="side">
+      <div class="side-sc">
+        <div class="grp open"><button class="grp-h" data-act="grp"><b>Finish</b><span class="val" id="finVal"></span><span class="car"></span></button>
+          <div class="grp-b"><div class="fins" id="fins"></div></div></div>
+        <div class="grp"><button class="grp-h" data-act="grp"><b>Style & design</b><span class="val" id="styleVal"></span><span class="car"></span></button>
+          <div class="grp-b"><div class="opts" id="styleOpts"></div></div></div>
+        <div class="grp open"><button class="grp-h" data-act="grp"><b>LED lighting</b><span class="val" id="ledVal"></span><span class="car"></span></button>
+          <div class="grp-b"><div class="opts" id="ledOpts"></div></div></div>
+        <div class="grp"><button class="grp-h" data-act="grp"><b>Winch mounting</b><span class="val" id="winVal"></span><span class="car"></span></button>
+          <div class="grp-b"><div class="opts" id="winOpts"></div></div></div>
+        <div class="grp"><button class="grp-h" data-act="grp"><b>Grille / brush guard</b><span class="val" id="grdVal"></span><span class="car"></span></button>
+          <div class="grp-b"><div class="opts" id="grdOpts"></div></div></div>
+        <div class="grp"><button class="grp-h" data-act="grp"><b>Accessories</b><span class="val" id="accVal"></span><span class="car"></span></button>
+          <div class="grp-b"><div class="opts" id="accOpts"></div></div></div>
+        <div class="grp"><button class="grp-h" data-act="grp"><b>Custom modifications</b><span class="val" id="modVal"></span><span class="car"></span></button>
+          <div class="grp-b"><div class="opts" id="modOpts"></div>
+            <textarea id="modNote" placeholder="Describe anything custom — we build one-offs." style="margin-top:10px"></textarea></div></div>
+      </div>
+      <div class="side-ft">
+        <div class="sumline"><span class="mono">Your build</span><b id="sumName"></b></div>
+        <div class="sum-list" id="sumList"></div>
+        <button class="btn btn-or" data-act="quote">Request a Custom Quote <span class="arr">→</span></button>
+        <div class="row">
+          <button class="btn btn-ghost btn-sm" data-act="go1">← Back</button>
+          <button class="btn btn-ghost btn-sm" data-act="compare">Compare</button>
+          <button class="btn btn-ghost btn-sm" data-act="reset">Reset</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- ================= MODALS ================= -->
+<div class="modal" id="mQuote">
+  <div class="mbox">
+    <form id="qForm" novalidate>
+      <div class="mhd"><div><span class="step-n">STEP 03 · NO OBLIGATION</span><h3 class="disp">Request a custom quote</h3></div><button type="button" class="x" data-act="close" aria-label="Close"></button></div>
+      <div class="mbd">
+        <div class="qgrid">
+          <div>
+            <div class="ff"><label class="mono" for="qName">Full name *</label><input class="inp" id="qName" autocomplete="name"><div class="em">Please enter your name</div></div>
+            <div class="frow">
+              <div class="ff"><label class="mono" for="qEmail">Email *</label><input class="inp" id="qEmail" type="email" autocomplete="email"><div class="em">Enter a valid email</div></div>
+              <div class="ff"><label class="mono" for="qPhone">Phone *</label><input class="inp" id="qPhone" type="tel" autocomplete="tel" placeholder="(970) 555-0123"><div class="em">Enter a 10-digit phone number</div></div>
+            </div>
+            <div class="ff"><label class="mono" for="qVeh">Truck make, model & year</label><input class="inp" id="qVeh"></div>
+            <div class="ff"><label class="mono" for="qNotes">Project notes</label><textarea id="qNotes" placeholder="Timeline, how you use the truck, anything we should know…"></textarea></div>
+            <label class="consent"><input type="checkbox" checked> Contact me about this quote by phone or email.</label>
+            <button class="btn btn-or" id="qSubmit" type="submit" style="width:100%">Submit My Request <span class="arr">→</span></button>
+          </div>
+          <div class="qsum"><div class="pv" id="qPv"></div><dl id="qDl"></dl></div>
+        </div>
+      </div>
+    </form>
+    <div id="qConf" class="conf" style="display:none">
+      <div class="ring"></div>
+      <h3 class="disp">Request received</h3>
+      <p>Thanks, <span id="qWho"></span>. Your build is with the shop — we'll reach out at <span id="qEm" style="color:var(--tx)"></span> to confirm fitment and details.</p>
+      <div class="ref">REF · <span id="qRef"></span></div><br>
+      <button class="btn btn-ghost" data-act="newq">Back to my build</button>
+      <p class="mono" style="margin-top:22px">Prototype — no data was sent</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="mCmp">
+  <div class="mbox lg">
+    <div class="mhd"><div><span class="step-n">SIDE BY SIDE</span><h3 class="disp">Compare designs</h3></div><button class="x" data-act="close" aria-label="Close"></button></div>
+    <div class="mbd"><div class="cmp" id="cmpBody"></div><p class="mono" style="margin-top:14px">Ratings are illustrative for comparison only.</p></div>
+  </div>
+</div>
+
+<div class="modal" id="mHow">
+  <div class="mbox">
+    <div class="mhd"><div><span class="step-n">THREE STEPS</span><h3 class="disp">How it works</h3></div><button class="x" data-act="close" aria-label="Close"></button></div>
+    <div class="mbd">
+      <div class="how">
+        <div><span class="mono">01</span><b>Pick your truck</b><p>Make, model, year and cab style.</p></div>
+        <div><span class="mono">02</span><b>Design it</b><p>Style, finish, lighting, winch, guard and extras — previewed live.</p></div>
+        <div><span class="mono">03</span><b>Get a quote</b><p>The shop reviews your build and follows up with pricing and timing.</p></div>
+      </div>
+      <button class="btn btn-or" data-act="close" style="margin-top:20px">Got it</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="mContact">
+  <div class="mbox sm">
+    <form id="cForm">
+      <div class="mhd"><div><span class="step-n">CRAIG, COLORADO</span><h3 class="disp">Contact the shop</h3></div><button type="button" class="x" data-act="close" aria-label="Close"></button></div>
+      <div class="mbd">
+        <div class="ff"><label class="mono">Name</label><input class="inp" required></div>
+        <div class="ff"><label class="mono">Email or phone</label><input class="inp" required></div>
+        <div class="ff"><label class="mono">Message</label><textarea></textarea></div>
+        <button class="btn btn-or" type="submit" style="width:100%">Send Message</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="src/bumper.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>
